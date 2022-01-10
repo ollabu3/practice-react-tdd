@@ -3,7 +3,7 @@ import "./App.css";
 
 const App = () => {
   const [buttonColor, setButtonColor] = useState("red");
-
+  const [disabled, setDisabled] = useState(false);
   const changeColor = buttonColor === "red" ? "blue" : "red";
 
   return (
@@ -15,9 +15,18 @@ const App = () => {
           border: "none",
           cursor: "pointer",
         }}
+        disabled={disabled}
       >
         Change to {changeColor}
       </button>
+      <input
+        id="disable-button-checkbox"
+        type="checkbox"
+        defaultChecked={disabled}
+        aria-checked={disabled}
+        onClick={() => setDisabled(!disabled)}
+      />
+      <label htmlFor="disable-button-checkbox">checkbox disabled</label>
     </div>
   );
 };
