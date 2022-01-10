@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-
+export function replaceCametWithSpaces(colorName) {
+  return colorName.replace(/\B([A-Z])\B/g, " $1");
+}
 const App = () => {
-  const [buttonColor, setButtonColor] = useState("red");
+  const [buttonColor, setButtonColor] = useState("blue");
   const [disabled, setDisabled] = useState(false);
-  const changeColor = buttonColor === "red" ? "blue" : "red";
+  const changeColor = () =>
+    disabled ? setButtonColor("gray") : setButtonColor("blue");
+
+  useEffect(() => {
+    changeColor();
+  }, [disabled]);
 
   return (
     <div className="App">
       <button
-        onClick={() => setButtonColor(changeColor)}
         style={{
           backgroundColor: buttonColor,
           border: "none",
@@ -17,7 +23,7 @@ const App = () => {
         }}
         disabled={disabled}
       >
-        Change to {changeColor}
+        Change to {buttonColor}
       </button>
       <input
         id="disable-button-checkbox"
