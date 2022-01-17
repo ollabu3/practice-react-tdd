@@ -6,8 +6,8 @@ import OrderSummary from "./pages/summary/OrderSummary";
 const App = () => {
   return (
     <div className="App">
+      {/*  */}
       <OrderEntry />
-      {/* <Options optionType={"scoops"} /> */}
       <OrderSummary />
     </div>
   );
