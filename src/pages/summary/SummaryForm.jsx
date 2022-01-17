@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import "./test/SummaryForm.test";
 
 export default function SummaryForm() {
   const [tcChecked, setTcChecked] = useState(false);

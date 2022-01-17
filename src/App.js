@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
-import Options from "./pages/entry/Options";
+import OrderEntry from "./pages/entry/OrderEntry";
 import OrderSummary from "./pages/summary/OrderSummary";
 
 const App = () => {
   return (
     <div className="App">
-      <Options optionType={"scoops"} />
+      <OrderEntry />
+      {/* <Options optionType={"scoops"} /> */}
       <OrderSummary />
     </div>
   );
